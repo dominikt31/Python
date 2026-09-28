@@ -1,16 +1,18 @@
+import random
+
 min = 1
-max = 500
-correct = 333
-guess = int(input(f"Podaj liczbe do zgadniecia ({min}-{max}) "))
+max = 1000
+correct = random.randint(min, max)
+guess = int(input(f"Podaj liczbe do zgadniecia ({min}-{max}), polowa: {(min+max) // 2} | "))
 
 while guess != correct:
     if guess < correct:
-        min = (min+max) // 2
-        print(f"{guess} to za malo, nowy przedzial: {min}-{max}, polowa: {(min+max) // 2}")
+        min = guess
+        print(f"{guess} to za malo")
     else:
-        max = (min+max) // 2
-        print(f"{guess} to za duzo, nowy przedzial: {min}-{max}, polowa: {(min+max) // 2}")
+        max = guess
+        print(f"{guess} to za duzo")
         
-    guess = int(input(f"Podaj liczbe do zgadniecia ({min}-{max}) "))
+    guess = int(input(f"Podaj liczbe do zgadniecia ({min}-{max}), polowa: {(min+max) // 2} | "))
     
 print("Liczba zgadnieta")
