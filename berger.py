@@ -7,7 +7,7 @@ n=8
 for i in range(0, n+1):
     T.append(i)
     
-print(f"-----\nKolejka nr.{kolejka}-----")
+print(f"-----\nKolejka nr.{kolejka}\n-----")
 
 for i in range(1, n//2 + 1):
     print(f"{IP[T[i]]} - {IP[T[n-i+1]]}")
@@ -17,7 +17,7 @@ kolejka += 1
 
 for j in range(kolejka, n):
 
-    print(f"-----\nKolejka nr.{kolejka}-----")
+    print(f"-----\nKolejka nr.{kolejka}\n-----")
 
     for i in range(1, n):
         T[i] = (T[i] + n//2 - 2) % (n - 1) + 1
